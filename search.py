@@ -85,13 +85,18 @@ def inputBoard():
 
 
 def main():
+    # Populate trie with words from wordlist.txt
+    root = TrieNode()
+    populateTrie(root)
+
+    # Input board
     board = inputBoard()
-    # print board nicely
+
+    # Print board
     for row in board:
         print(row)
 
-    root = TrieNode()
-    populateTrie(root)
+    # Find words
     ws = WordSearch()
     print(ws.findWords(board, root))
 
